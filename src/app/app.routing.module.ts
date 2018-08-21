@@ -23,16 +23,16 @@ import { OrderDetailsComponent } from './components/order/order-details/order-de
 
 
 const routes = [
-    { path: '/comix-store', component: HomeComponent },
-    { path: '/comix-store/home', component: HomeComponent },
+    { path: 'comix-shop', component: HomeComponent },
+    { path: 'comix-shop/home', component: HomeComponent },
     {
-        path: 'auth', children: [
+        path: 'comix-shop/auth', children: [
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
         ], canActivate: [AppGuard]
     },
     {
-        path: 'comix', children: [
+        path: 'comix-shop/comix', children: [
             { path: 'all', component: ComixAllComponent },
             { path: 'create', component: ComixCreateComponent, canActivate: [AdminGuard] },
             { path: 'edit/:id', component: ComixEditComponent, canActivate: [AdminGuard] },
@@ -41,7 +41,7 @@ const routes = [
         ], canActivate: [AuthGuard]
     },
     {
-        path: 'order', children: [
+        path: 'comix-shop/order', children: [
             { path: 'confirm/:id', component: OrderConfirmComponent },
             { path: 'finish/:id', component: OrderFinishComponent },
             { path: 'my', component: OrderMyComponent },
@@ -50,13 +50,13 @@ const routes = [
         ], canActivate: [AuthGuard]
     },
     {
-        path: 'user', children: [
+        path: 'comix-shop/user', children: [
             { path: 'profile', component: ProfileComponent },
             { path: 'all', component: UserAllComponent, canActivate: [AdminGuard] },
             { path: 'details/:id', component: UserDetailsComponent, canActivate: [AdminGuard] },
         ], canActivate: [AuthGuard]
     },
-    { path: '**', redirectTo: '/comix-store' }
+    { path: '**', redirectTo: '/comix-shop' }
 ]
 
 @NgModule({
