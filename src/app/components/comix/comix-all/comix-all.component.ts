@@ -9,7 +9,10 @@ import { Router } from '../../../../../node_modules/@angular/router';
 @Component({
   selector: 'app-comix-all',
   templateUrl: './comix-all.component.html',
-  styleUrls: ['./comix-all.component.css']
+  styleUrls: ['./comix-all.component.css',
+  '../../../app.animations.css', 
+  '../../../app.transitions.css', 
+  '../../../app.keyframes.css']
 })
 export class ComixAllComponent implements OnInit {
 
