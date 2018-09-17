@@ -22,6 +22,10 @@ export class AuthService {
         ? localStorage.getItem('username')
         : null;
 
+    private currentAvatarUrl: string = localStorage.getItem('avatar')
+        ? localStorage.getItem('avatar')
+        : null;
+
     private currentEmail: string = localStorage.getItem('email')
         ? localStorage.getItem('email')
         : null;
@@ -86,6 +90,14 @@ export class AuthService {
     set username(newUsername: string) {
         this.currentUsername = newUsername;
     }
+
+    get avatarUrl() {
+        return this.currentAvatarUrl;
+    }
+    set avatarUrl(newAvatarUrl: string) {
+        this.currentAvatarUrl = newAvatarUrl;
+    }
+
 
     //getter and setter for the email field
     get email() {

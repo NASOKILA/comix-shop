@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { OrderService } from '../../order/order.service';
 import { AuthService } from '../../auth/auth.service';
 import { OrderModel } from '../../../models/order.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -22,6 +23,7 @@ export class UserDetailsComponent implements OnInit {
   constructor(
     private userService: UserService,
     private authService: AuthService,
+    private router: Router,
     private toastr: ToastrService,
     private orderService: OrderService,
     private route: ActivatedRoute) { }
@@ -32,6 +34,11 @@ export class UserDetailsComponent implements OnInit {
 
     this.userService.getUserById(id)
       .then(user => {
+        
+        if(user.username == this.authService.username && user.email == this.authService.email)
+        {
+          this.router.navigate(['/comix-shop/user/profile'])
+        }
 
         if (user._kmd.hasOwnProperty('roles')) {
           user.role = "Admin";

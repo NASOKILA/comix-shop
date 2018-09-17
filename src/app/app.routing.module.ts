@@ -54,7 +54,7 @@ const routes = [
         path: 'user', children: [
             { path: 'profile', component: ProfileComponent },
             { path: 'all', component: UserAllComponent, canActivate: [AdminGuard] },
-            { path: 'details/:id', component: UserDetailsComponent, canActivate: [AdminGuard] },
+            { path: 'details/:id', component: UserDetailsComponent },
         ], canActivate: [AuthGuard]
     },
     { path: '**', component: ErrorComponent }

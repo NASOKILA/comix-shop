@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
       this.toastr.error('Passwords do not match!', "Error!")
       return false;
     }
-    else if (email === null || email === "" || email.trim() === "") {
+    else if (email === null || email === "" || email.trim() === "" || !email.includes("@") || !email.includes(".")) {
       this.toastr.error('Invalid email input!', "Error!")
       return false;
     }
@@ -61,9 +61,10 @@ export class RegisterComponent implements OnInit {
     const password = f.value.password;
     const confirmPassword = f.value.confirmPassword;
     const email = f.value.email;
+    const avatarUrl = f.value.avatarImage;
 
     if (this.validateForm(username, password, confirmPassword, email)) {
-      this.authService.register({ username, password, email })
+      this.authService.register({ username, password, email, avatarUrl })
         .toPromise().then((data: any) => {
           this.toastr.success('Registration successfull!', 'Success!');
           this.router.navigate(['auth/login']);

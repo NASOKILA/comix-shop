@@ -52,9 +52,10 @@
                   <br/>
                   <h5>{{ comment.description }}</h5>
                   <span>Created by
-                    <strong style="color: grey">{{ comment.creator }}</strong> on
+                    <strong class="comix-creator"><a href="/comix-shop/user/details/{{comment._acl.creator}}">{{ comment.creator }}</a></strong> on
                     <i>{{ comment.date }}</i>
                   </span>
+                  <br/>
                   <button *ngIf="authService.isAdmin() || comment.creator === authService.username" style="margin: 0 auto" class="btn btn-danger col-3"
                   (click)="deleteComment(comment._id)">Delete Comment</button>
                   <br/>

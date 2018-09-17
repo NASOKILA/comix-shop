@@ -11,9 +11,15 @@
       <br/>
       <br/>
 
-
       <h3 class="right">Username:</h3>
       <h1 class="display-4 left">{{ authService.username }}</h1>
+      <br/>
+      <hr />
+
+      <br/>
+      <h3 class="right">Avatar Image:</h3>
+      <img class="avatar-details-image card-image-top img-fluid img-thumbnail forms" src="{{ authService.avatarUrl }}" />
+      <br/>
       <br/>
       <hr />
 
@@ -27,7 +33,7 @@
       <h3 class="right">Role:</h3>
       <h1 class="display-4 left">{{ authService.role }}</h1>
       <br/>
-
+      <hr />
 
       <br/>
       <h3 class="right">Orders:</h3>
