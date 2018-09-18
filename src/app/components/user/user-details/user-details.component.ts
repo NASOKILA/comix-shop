@@ -8,6 +8,7 @@ import { AuthService } from '../../auth/auth.service';
 import { OrderModel } from '../../../models/order.model';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
@@ -37,7 +38,7 @@ export class UserDetailsComponent implements OnInit {
         
         if(user.username == this.authService.username && user.email == this.authService.email)
         {
-          this.router.navigate(['/comix-shop/user/profile'])
+          this.router.navigate(['/user/profile'])
         }
 
         if (user._kmd.hasOwnProperty('roles')) {
@@ -49,7 +50,6 @@ export class UserDetailsComponent implements OnInit {
 
         this.user = user;
 
-        //get orders for this user
         this.orderService.getAllOrders()
           .then((orders: any) => {
 

@@ -21,6 +21,8 @@ import { ComixDeleteComponent } from './components/comix/comix-delete/comix-dele
 import { UserDetailsComponent } from './components/user/user-details/user-details.component';
 import { OrderDetailsComponent } from './components/order/order-details/order-details.component';
 import { ErrorComponent } from './components/common/error/error.component';
+import { UserchangeComponent } from './components/user/userchange/userchange.component';
+import { ChangepasswordComponent } from './components/user/changepassword/changepassword.component';
 
 
 const routes = [
@@ -55,6 +57,8 @@ const routes = [
             { path: 'profile', component: ProfileComponent },
             { path: 'all', component: UserAllComponent, canActivate: [AdminGuard] },
             { path: 'details/:id', component: UserDetailsComponent },
+            { path: 'change', component: UserchangeComponent },
+            { path: 'passwordchange', component: ChangepasswordComponent },      
         ], canActivate: [AuthGuard]
     },
     { path: '**', component: ErrorComponent }

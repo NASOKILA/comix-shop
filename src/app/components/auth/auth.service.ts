@@ -4,7 +4,6 @@ import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { LoginModel } from "../../models/login.model";
 import { RegisterModel } from "../../models/register.model";
 
-
 const appKey: string = "kid_rkTx5Dqrm";
 const appSecret: string = "4242e34801db43bdb6dd91adeb4d1a02";
 const registerUrl: string = `https://baas.kinvey.com/user/${appKey}`;
@@ -52,18 +51,25 @@ export class AuthService {
     }
 
     public login(loginModel: LoginModel) {
-        return this.http.post(
-            loginUrl,
-            JSON.stringify(loginModel),
-            { headers: this.createAuthHeaders("Basic") }
+        return this.http.post(loginUrl, JSON.stringify(loginModel), { headers: this.createAuthHeaders("Basic") }
         );
     }
 
     public register(registerModel: RegisterModel) {
-        return this.http.post(
+        return this.http.put(
             registerUrl,
             JSON.stringify(registerModel),
             { headers: this.createAuthHeaders("Basic") }
+        );
+    }
+
+    public update(user : any) {
+
+        let updateUrl = registerUrl + "/" + user._id
+        return this.http.put(
+            updateUrl,
+            JSON.stringify(user),
+            { headers: this.createAuthHeaders("Kinvey") }
         );
     }
 

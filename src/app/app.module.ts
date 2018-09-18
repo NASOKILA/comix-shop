@@ -32,7 +32,11 @@ import { UserDetailsComponent } from './components/user/user-details/user-detail
 import { OrderService } from './components/order/order.service';
 import { OrderDetailsComponent } from './components/order/order-details/order-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ErrorComponent } from './components/common/error/error.component'
+import { ErrorComponent } from './components/common/error/error.component';
+import { UserchangeComponent } from './components/user/userchange/userchange.component';
+import { ChangepasswordComponent } from './components/user/changepassword/changepassword.component'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,9 @@ import { ErrorComponent } from './components/common/error/error.component'
     UserAllComponent,
     UserDetailsComponent,
     OrderDetailsComponent,
-    ErrorComponent
+    ErrorComponent,
+    UserchangeComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,9 @@ import { ErrorComponent } from './components/common/error/error.component'
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FontAwesomeModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     AuthService,
