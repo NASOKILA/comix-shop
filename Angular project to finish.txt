@@ -5,3 +5,4 @@ add lazy loading to load the data only when you need it,
 
 add google API for a location map in the about page,
 add paypal API for the order creation in the order config page,
+  
