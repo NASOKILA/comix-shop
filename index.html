@@ -1,15 +1,104 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>ComixShop</title>
   <base href="/comix-shop">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 <link rel="stylesheet" href="/comix-shop/styles.96b4bc49d46ef52ae635.css"></head>
+
 <body>
   <app-root></app-root>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG7A-lsKeXWIS8L2g3dI4jt-dAUUrvwgs&callback=initMap" async defer>
+  </script>
+  
+    <script>
+      
+        function initMap() {
+          
+          let options = {
+            zoom: 14,
+            center: { lat: 42.0209, lng: 23.0943 }
+          };
+      
+          let map = new google.maps.Map(document.getElementById('map'), options);
+      
+          //add marker on map click, listen for click map
+          google.maps.event.addListener(map, 'click', function (e) {
+            addMarker({ coords: e.latLng })
+          })
+      
+      
+          //custom marker for map
+          addMarker({
+            coords: { lat: 42.0209, lng: 23.0943 },
+            iconImage: 'https://findicons.com/files/icons/2813/flat_jewels/256/location_pin.png',
+            textOnClick: 'Home : Hristo Chernopeev 37'
+          });
+      
+          //custom marker for map
+          addMarker({
+            coords: { lat: 42.0201, lng: 23.0913 },
+            iconImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Home_font_awesome.svg/1024px-Home_font_awesome.svg.png',
+            textOnClick: 'Office : Ulica Krushevo 5'
+          });
+      
+          //We can hve functions to add markers
+          function addMarker(props) {
+    
+            //create the marker
+            let marker = new google.maps.Marker({
+              position: props.coords,
+              map: map,
+            });
+      
+            //check for icon
+            if (props.iconImage) {
+      
+              //icon for marker
+              var icon = {
+                url: props.iconImage,
+                scaledSize: new google.maps.Size(50, 50),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0)
+              };
+      
+              marker.setIcon(icon);
+      
+              //check for text
+              if (props.textOnClick) {
+      
+                //additional window pulps up whenmarker marker klicked
+                let infoWindow = new google.maps.InfoWindow({
+                  content: '<h5> ' + props.textOnClick + '</h5>'
+                });
+      
+                //listener for marker
+                marker.addListener('click', function () {
+                  infoWindow.open(map, marker);
+                })
+              }
+            }
+          }
+      }
+      
+      /*(function(){
+        let a = 0;
+        setInterval(() => {
+          console.log(++a);
+          
+        }, 3000);
+      
+        })();
+*/
+    </script>
+    
 <script type="text/javascript" src="/comix-shop/runtime.a66f828dca56eeb90e02.js"></script>
 <script type="text/javascript" src="/comix-shop/polyfills.9f773b75ffcda6bb2a95.js"></script>
-<script type="text/javascript" src="/comix-shop/main.490e8e66592b9dfb3807.js"></script></body>
+<script type="text/javascript" src="/comix-shop/main.097a8245d7a1d8d24b7b.js"></script></body>
 </html>
