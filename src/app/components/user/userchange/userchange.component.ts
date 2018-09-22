@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from '../../user/user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-userchange',

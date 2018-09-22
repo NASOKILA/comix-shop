@@ -21,14 +21,14 @@
 
                             <div class="form-group row">
                                 <label class="form-control-label">Description <span class="red-star"> *</span></label>
-                                <textarea required minlength="20" rows="4" class="form-control" name="description" id="description" placeholder="Enter Comix Description"
+                                <textarea required minlength="1" rows="4" class="form-control" name="description" id="description" placeholder="Enter Comix Description"
                                     [(ngModel)]="comix.description" #description></textarea>
                             </div>
 
                             <div class="form-group row">
                                 <label class="form-control-label">Thumbnail <span class="red-star"> *</span></label>
                                 <input required type="url" class="form-control" name="image" id="image" placeholder="Enter URL to Image" [(ngModel)]="comix.image"
-                                    #description />
+                                    #image />
                             </div>
 
                             <div class="form-group row">

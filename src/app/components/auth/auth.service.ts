@@ -56,7 +56,7 @@ export class AuthService {
     }
 
     public register(registerModel: RegisterModel) {
-        return this.http.put(
+        return this.http.post(
             registerUrl,
             JSON.stringify(registerModel),
             { headers: this.createAuthHeaders("Basic") }

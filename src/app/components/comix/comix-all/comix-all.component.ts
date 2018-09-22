@@ -4,7 +4,7 @@ import { AuthService } from '../../auth/auth.service';
 import { UserService } from '../../user/user.service';
 import { OrderService } from '../../order/order.service';
 import { UserModel } from '../../../models/user.model';
-import { Router } from '../../../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comix-all',

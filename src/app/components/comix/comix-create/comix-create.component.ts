@@ -56,9 +56,7 @@ export class ComixCreateComponent implements OnInit {
   }
 
   createComix() {
-
     if (this.validateModel()) {
-
       this.comix.comments = [];
 
       this.comixService.createComix(this.comix)

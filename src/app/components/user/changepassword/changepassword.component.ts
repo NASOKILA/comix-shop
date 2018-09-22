@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { AuthService } from '../../auth/auth.service';
 import  * as $  from 'jquery';
-import { ToastrService } from '../../../../../node_modules/ngx-toastr';
-import { Router } from '../../../../../node_modules/@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-changepassword',

@@ -7,7 +7,7 @@ import { ComixEditModel } from '../../../models/comix-edit.model';
 import { CommentModel } from '../../../models/comment.model';
 import { CommentsService } from '../comments.service';
 import { CommentCreateModel } from '../../../models/comment-create.model';
-import { ToastrService } from '../../../../../node_modules/ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
