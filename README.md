@@ -9,7 +9,7 @@ This is a simple comics shop application created with Angular where a registered
 The app contains animations, transitions, success and error messages, back and front form validations, pagination and more.
 It uses Kinvey for a backend server, database, authentication and roles and it has bootstrap for design.
 
-The app is uploaded to a Github repository and Google Drive: https://github.com/NASOKILA/08.AngularJS.git
+The app is uploaded to a Github repository and Google Drive: https://github.com/NASOKILA/comix-shop.git
 https://drive.google.com/open?id=1bXd5qDzs6TssJ94pX20zzt4bfB0BSqbe 
 
 
